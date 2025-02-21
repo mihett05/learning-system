@@ -13,6 +13,6 @@ class CreateExecutionTestDto:
 
 @dataclass
 class ReadExecutionTestDto:
-    task_guid: UUID
+    task_uuid: UUID
     page: int
     page_size: int

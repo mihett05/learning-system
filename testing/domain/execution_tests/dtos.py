@@ -6,8 +6,7 @@ from .enums import ExecutionTestTypeEnum
 
 @dataclass
 class CreateExecutionTestDto:
-    time_limit: int
-    memory_limit: int
+    title: str
     file: str
     type: ExecutionTestTypeEnum
 

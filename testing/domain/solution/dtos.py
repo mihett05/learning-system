@@ -9,5 +9,5 @@ class SolutionReadDTO:
 
 @dataclass
 class SolutionCreateDTO:
-    id: UUID
+    uuid: UUID
     file: str

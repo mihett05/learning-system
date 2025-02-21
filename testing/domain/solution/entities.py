@@ -23,7 +23,7 @@ class ExecutionTestResultEnum(Enum):
 
 @dataclass
 class ResultTry:
-    id: UUID
+    uuid: UUID
     state: ExecutionTestResultEnum
     description: str
     description_short: str
@@ -32,7 +32,7 @@ class ResultTry:
 
 @dataclass
 class Result:
-    id: UUID
+    uuid: UUID
     score: int
     title: str
     type: ResultTypeEnum
@@ -42,7 +42,7 @@ class Result:
 
 @dataclass
 class Solution:
-    id: UUID
+    uuid: UUID
     file: str
     result: Result
     created_at: datetime = field(default_factory=datetime.utcnow)

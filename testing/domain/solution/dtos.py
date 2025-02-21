@@ -2,12 +2,12 @@ from dataclasses import dataclass
 from uuid import UUID
 
 @dataclass
-class SolutionReadDTO:
+class ReadSolutionDTO:
     task_uuid: UUID
     page: int
     page_size: int
 
 @dataclass
-class SolutionCreateDTO:
+class CreateSolutionDTO:
     uuid: UUID
     file: str

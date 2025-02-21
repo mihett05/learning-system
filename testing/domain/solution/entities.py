@@ -2,6 +2,7 @@ from enum import Enum
 from dataclasses import dataclass, field
 from uuid import UUID
 from datetime import datetime
+
 from ..execution_tests.entities import ExecutionTest
 
 class ResultTypeEnum(Enum):
@@ -44,5 +45,5 @@ class Result:
 class Solution:
     uuid: UUID
     file: str
-    result: Result
+    result: Result | None
     created_at: datetime = field(default_factory=datetime.utcnow)

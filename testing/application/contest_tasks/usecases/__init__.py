@@ -1,8 +1,8 @@
-from .read import ContestTaskReadUseCase
-from .create import ContestTaskCreateUseCase
-from .update import ContestTaskUpdateUseCase
-from .delete import ContestTaskDeleteUseCase
-from .readall import ContestTaskReadAllUseCase
+from .read import ReadContestTaskUseCase
+from .create import CreateContestTaskUseCase
+from .update import UpdateContestTaskUseCase
+from .delete import DeleteContestTaskUseCase
+from .read_all import ReadAllContestTaskUseCase
 
-__all__ = ["ContestTaskReadUseCase", "ContestTaskCreateUseCase", "ContestTaskUpdateUseCase",
-           "ContestTaskDeleteUseCase", "ContestTaskReadAllUseCase"]
+__all__ = ["ReadContestTaskUseCase", "CreateContestTaskUseCase", "UpdateContestTaskUseCase",
+           "DeleteContestTaskUseCase", "ReadAllContestTaskUseCase"]

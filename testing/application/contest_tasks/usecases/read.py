@@ -4,7 +4,7 @@ from domain.contest_tasks.entities import ContestTask
 from domain.contest_tasks.repositories import ContestTaskRepository
 
 
-class ContestTaskReadUseCase:
+class ReadContestTaskUseCase:
     def __init__(self, repository: ContestTaskRepository): #Gateway лишний, использовался Мишей во время тестов
         self.__repository = repository
 

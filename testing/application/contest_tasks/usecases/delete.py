@@ -1,14 +1,21 @@
 from uuid import UUID
 
-from testing.application.contest_tasks.usecases import ContestTaskReadUseCase
-from testing.domain.contest_tasks.entities import ContestTask
-from testing.domain.contest_tasks.repositories import ContestTaskRepository
+from application.contest_tasks.usecases import ReadContestTaskUseCase
+from domain.contest_tasks.entities import ContestTask
+from domain.contest_tasks.repositories import ContestTaskRepository
+
+from application.transactions import TransactionsGateway
 
 
-class ContestTaskDeleteUseCase:
-    def __init__(self, repository: ContestTaskRepository):
+class DeleteContestTaskUseCase:
+    def __init__(self, repository: ContestTaskRepository, tx: TransactionsGateway):
         self.__repository = repository
+        self.__read_use_case = ReadContestTaskUseCase(self.__repository)
+        self.transaction = tx
 
-    def __call__(self, uuid: UUID) -> ContestTask:
-        entity = ContestTaskReadUseCase(self.__repository).__call__(uuid)
-        return await self.__repository.delete(entity)
+    async def __call__(self, uuid: UUID) -> ContestTask:
+        async with self.transaction as transaction:
+            entity = await self.__read_use_case(uuid)
+            entity = await self.__repository.delete(entity)
+            await transaction.commit()
+            return entity

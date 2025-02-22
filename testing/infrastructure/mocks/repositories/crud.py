@@ -33,7 +33,6 @@ class MockRepository(Generic[Entity, Id]):
         return entity
 
     async def read(self, entity_id: Id) -> Entity:
-        entity_id = self.__config.extract_id(entity_id)
         if entity_id not in self.storage:
             raise self.__config.not_found_exception()
         return self.storage[entity_id]

@@ -1,13 +1,16 @@
 from dishka import make_async_container, AsyncContainer, Provider
 
-from .repositories import RepositoriesProvider
 from infrastructure.providers.config import ConfigProvider
 from infrastructure.providers.container import get_container_application
+
+from .repositories import RepositoriesProvider
+from .transactions import TransactionsProvider
 
 
 def get_container_mocks() -> list[Provider]:
     return [
         ConfigProvider(),
+        TransactionsProvider(),
         RepositoriesProvider(),
     ]
 

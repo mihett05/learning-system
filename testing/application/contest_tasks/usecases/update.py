@@ -7,9 +7,9 @@ from application.transactions import TransactionsGateway
 
 
 class UpdateContestTaskUseCase:
-    def __init__(self, repository: ContestTaskRepository, tx: TransactionsGateway):
+    def __init__(self, repository: ContestTaskRepository, tx: TransactionsGateway, uc: ReadContestTaskUseCase):
         self.__repository = repository
-        self.__read_use_case = ReadContestTaskUseCase(self.__repository)
+        self.__read_use_case = uc
         self.transaction = tx
 
     async def __call__(self, dto: UpdateContestTaskDto) -> ContestTask:

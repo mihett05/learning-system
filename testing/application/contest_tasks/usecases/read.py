@@ -5,7 +5,7 @@ from domain.contest_tasks.repositories import ContestTaskRepository
 
 
 class ReadContestTaskUseCase:
-    def __init__(self, repository: ContestTaskRepository): #Gateway лишний, использовался Мишей во время тестов
+    def __init__(self, repository: ContestTaskRepository):
         self.__repository = repository
 
     async def __call__(self, uuid: UUID) -> ContestTask:

@@ -9,5 +9,5 @@ class ReadSolutionDto:
 
 @dataclass
 class CreateSolutionDto:
-    uuid: UUID
+    task_uuid: UUID
     file: str

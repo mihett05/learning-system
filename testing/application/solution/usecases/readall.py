@@ -1,6 +1,6 @@
 from domain.solution.entities import Solution
 from domain.solution.repositories import SolutionRepository
-from testing.domain.solution.dtos import ReadSolutionDto
+from domain.solution.dtos import ReadSolutionDto
 
 
 class ReadAllSolutionUsecase:

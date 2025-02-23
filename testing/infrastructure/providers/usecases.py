@@ -1,6 +1,12 @@
 from dishka import Provider, provide_all, Scope
 
-from application.contest_tasks.usecases import ContestTaskReadUseCase
+from application.contest_tasks.usecases import (
+    CreateContestTaskUseCase,
+    ReadContestTaskUseCase,
+    ReadAllContestTaskUseCase,
+    UpdateContestTaskUseCase,
+    DeleteContestTaskUseCase,
+)
 
 
 class UseCasesProvider(Provider):
@@ -8,4 +14,10 @@ class UseCasesProvider(Provider):
 
     # для каждого модулю делаете по отдельному provide_all
 
-    contest_tasks = provide_all(ContestTaskReadUseCase)
+    contest_tasks = provide_all(
+        CreateContestTaskUseCase,
+        ReadContestTaskUseCase,
+        ReadAllContestTaskUseCase,
+        UpdateContestTaskUseCase,
+        DeleteContestTaskUseCase,
+    )

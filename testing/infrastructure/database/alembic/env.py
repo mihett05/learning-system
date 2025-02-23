@@ -26,7 +26,7 @@ if config.config_file_name is not None:
 # target_metadata = mymodel.Base.metadata
 
 import service  # noqa
-from infrastructure.database.postgres import Base
+from infrastructure.database.postgres import Base  # noqa
 
 target_metadata = Base.metadata
 

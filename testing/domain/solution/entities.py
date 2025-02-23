@@ -1,4 +1,3 @@
-from enum import Enum
 from dataclasses import dataclass, field
 from uuid import UUID
 from datetime import datetime
@@ -15,6 +14,7 @@ class ResultTry:
     description_short: str
     execution_tests: ExecutionTest
     created_at: datetime = field(default_factory=datetime.utcnow)
+
 
 @dataclass
 class Result:

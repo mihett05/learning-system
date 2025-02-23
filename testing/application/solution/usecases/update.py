@@ -1,4 +1,4 @@
-from testing.application.solution import UpdateSolutionDto
+from testing.application.solution.usecases.dto import UpdateSolutionDto
 from testing.domain.solution.repositories import SolutionRepository
 
 

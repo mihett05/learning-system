@@ -1,5 +1,5 @@
-from testing.application.solution.usecases.dto import UpdateSolutionDto
-from testing.domain.solution.repositories import SolutionRepository
+from application.solution.usecases.dto import UpdateSolutionDto
+from domain.solution.repositories import SolutionRepository
 
 
 class UpdateSolutionUsecase:

@@ -1,24 +1,14 @@
-from abc import ABCMeta, abstractmethod
-from dataclasses import dataclass
 from uuid import UUID
 
-from testing.domain.solution.dtos import CreateSolutionDto
-from testing.domain.solution.entities import Solution
-from testing.domain.solution.repositories import SolutionRepository
-
-@dataclass
-class WorkerMessage:
-    solution_uuid: UUID
-    task_uuid: UUID
-
-class WorkerGateway(metaclass=ABCMeta):
-    @abstractmethod
-    def run_solution(self, message: WorkerMessage): ...
+from application.solution.usecases.worker_gateway import WorkerGateway
+from domain.solution.dtos import CreateSolutionDto
+from domain.solution.entities import Solution
+from domain.solution.repositories import SolutionRepository
 
 
 class CreateSolutionUsecase:
     def __init__(self, repository: SolutionRepository, gateway: WorkerGateway):
-        self.__repository =  repository
+        self.__repository = repository
         self.__gateway = gateway
 
     async def __call__(self, dto: CreateSolutionDto) -> Solution:

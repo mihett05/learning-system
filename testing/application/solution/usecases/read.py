@@ -1,7 +1,7 @@
 from uuid import UUID
 
-from testing.domain.solution.entities import Solution
-from testing.domain.solution.repositories import SolutionRepository
+from domain.solution.entities import Solution
+from domain.solution.repositories import SolutionRepository
 
 
 class ReadSolutionUsecase:

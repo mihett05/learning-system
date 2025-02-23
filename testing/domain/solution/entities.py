@@ -15,6 +15,7 @@ class ResultTry:
     execution_tests: ExecutionTest
     created_at: datetime = field(default_factory=datetime.utcnow)
 
+
 @dataclass
 class Result:
     uuid: UUID

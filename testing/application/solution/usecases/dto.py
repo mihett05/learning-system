@@ -1,7 +1,8 @@
 from dataclasses import dataclass
 from uuid import UUID
 
-from testing.domain.solution.entities import Result
+from domain.solution.entities import Result
+
 
 @dataclass
 class UpdateSolutionDto:
